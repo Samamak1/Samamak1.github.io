@@ -104,10 +104,13 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-figure::before {
   content: ""; position: absolute; inset: 18px 0 0 18px;
   background: var(--color-accent-wash); border-radius: var(--radius-sm);
+  z-index: 0;
 }
 .hero-figure img {
-  position: relative; margin-inline: auto; width: 100%; max-width: 340px;
+  position: relative; z-index: 1; margin-inline: auto; width: 100%; max-width: 340px;
+  aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 22%;
   border-radius: var(--radius-sm); border: 1px solid var(--color-rule);
+  background: var(--color-paper-2);
 }
 .hero-figure figcaption {
   position: relative; text-align: center; padding-block: var(--space-sm) var(--space-md);
@@ -209,8 +212,14 @@ section { padding-block: var(--space-2xl); }
 .site-foot .made { font-family: var(--font-mono); font-size: var(--text-label); letter-spacing: 0.08em; }
 
 /* ---------- reveal motion (transform/opacity only) ---------- */
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out); }
+.reveal {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+  /* CSS-only failsafe: even with no JavaScript, nothing stays hidden past 3s */
+  animation: reveal-failsafe 1ms linear 3s forwards;
+}
 .reveal.is-in { opacity: 1; transform: none; }
+@keyframes reveal-failsafe { to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -226,6 +235,4 @@ section { padding-block: var(--space-2xl); }
   .ledger-row .years { padding-top: 0; }
 }
 @media (max-width: 480px) {
-  .site-head .wrap { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
-  .site-nav { gap: var(--space-md); }
-  .proof-item { border-lef
+  .site-head .wrap { flex-di
