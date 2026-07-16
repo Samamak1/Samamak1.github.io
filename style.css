@@ -118,7 +118,7 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.1em;
 }
 
-/* proof bar — real numbers only */
+/* proof bar - real numbers only */
 .proof { border-top: var(--rule); background: var(--color-paper-2); }
 .proof .wrap {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
