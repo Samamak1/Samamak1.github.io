@@ -272,16 +272,6 @@ def build():
     )
     role(
         story,
-        "Darden Restaurants",
-        "Manager-in-Training",
-        "Mar 2025-Jul 2025",
-        "Enterprise leadership development",
-        [
-            "Completed a structured management program in the top 5%, strengthening enterprise operating standards, leadership cadence, and service execution.",
-        ],
-    )
-    role(
-        story,
         "Hard Rock Casino Cincinnati",
         "Operations Manager to AGM to Acting GM",
         "Jan 2024-Jan 2025",
