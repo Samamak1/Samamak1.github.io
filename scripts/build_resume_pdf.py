@@ -49,8 +49,8 @@ name_style = ParagraphStyle(
     "Name",
     parent=styles["Normal"],
     fontName="Helvetica-Bold",
-    fontSize=24,
-    leading=24,
+    fontSize=25,
+    leading=25,
     textColor=NAVY,
     spaceAfter=2,
 )
@@ -58,8 +58,8 @@ title_style = ParagraphStyle(
     "Title",
     parent=styles["Normal"],
     fontName="Helvetica-Bold",
-    fontSize=9.4,
-    leading=11,
+    fontSize=9.8,
+    leading=11.6,
     tracking=0.6,
     textColor=BLUE,
 )
@@ -67,8 +67,8 @@ contact_style = ParagraphStyle(
     "Contact",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=7.6,
-    leading=9.8,
+    fontSize=8,
+    leading=10.2,
     textColor=MUTED,
     alignment=TA_RIGHT,
 )
@@ -76,36 +76,36 @@ summary_style = ParagraphStyle(
     "Summary",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=8.65,
-    leading=11,
+    fontSize=9.2,
+    leading=12,
     textColor=NAVY,
-    spaceAfter=5,
+    spaceAfter=9,
 )
 section_style = ParagraphStyle(
     "Section",
     parent=styles["Normal"],
     fontName="Helvetica-Bold",
-    fontSize=9,
-    leading=10.5,
+    fontSize=9.4,
+    leading=11.2,
     tracking=0.9,
     textColor=NAVY,
-    spaceBefore=6,
-    spaceAfter=4,
+    spaceBefore=10,
+    spaceAfter=5,
 )
 role_style = ParagraphStyle(
     "Role",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=8.4,
-    leading=9.9,
+    fontSize=8.9,
+    leading=10.8,
     textColor=NAVY,
 )
 date_style = ParagraphStyle(
     "Date",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=7.1,
-    leading=8.7,
+    fontSize=7.5,
+    leading=9.2,
     textColor=MUTED,
     alignment=TA_RIGHT,
 )
@@ -113,48 +113,48 @@ category_style = ParagraphStyle(
     "Category",
     parent=styles["Normal"],
     fontName="Helvetica-Bold",
-    fontSize=6.6,
-    leading=7.8,
+    fontSize=7,
+    leading=8.6,
     tracking=0.55,
     textColor=BLUE,
-    spaceAfter=1,
+    spaceAfter=2,
 )
 bullet_style = ParagraphStyle(
     "Bullet",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=7.8,
-    leading=9.6,
-    leftIndent=9,
-    firstLineIndent=-6,
+    fontSize=8.55,
+    leading=11.15,
+    leftIndent=10,
+    firstLineIndent=-7,
     textColor=colors.HexColor("#354156"),
-    spaceAfter=1.2,
+    spaceAfter=2,
 )
 compact_style = ParagraphStyle(
     "Compact",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=7.6,
-    leading=9.4,
+    fontSize=8.15,
+    leading=10.3,
     textColor=colors.HexColor("#354156"),
-    spaceAfter=1.2,
+    spaceAfter=1.5,
 )
 capability_style = ParagraphStyle(
     "Capabilities",
     parent=styles["Normal"],
     fontName="Helvetica-Bold",
-    fontSize=7.05,
-    leading=8.9,
+    fontSize=7.45,
+    leading=9.6,
     textColor=MUTED,
     backColor=PALE,
-    borderPadding=(3, 5, 3, 5),
-    spaceAfter=3,
+    borderPadding=(4, 6, 4, 6),
+    spaceAfter=6,
 )
 
 
 def section(story, title):
     story.append(Paragraph(title.upper(), section_style))
-    story.append(HRFlowable(width="100%", thickness=0.5, color=LINE, spaceAfter=2.5))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=LINE, spaceAfter=3.5))
 
 
 def role(story, company, title, dates, category, bullets):
@@ -176,7 +176,7 @@ def role(story, company, title, dates, category, bullets):
     )
     block = [head, Paragraph(category.upper(), category_style)]
     block.extend(Paragraph(f"- {item}", bullet_style) for item in bullets)
-    block.append(Spacer(1, 3.4))
+    block.append(Spacer(1, 9.5))
     story.append(KeepTogether(block))
 
 
@@ -221,8 +221,8 @@ def build():
 
     story = [
         header,
-        Spacer(1, 6),
-        HRFlowable(width="100%", thickness=2.1, color=NAVY, spaceAfter=7),
+        Spacer(1, 8),
+        HRFlowable(width="100%", thickness=2.1, color=NAVY, spaceAfter=9),
         Paragraph(
             "Cross-functional program and operations leader with experience spanning approximately "
             "$30M in cumulative P&amp;L responsibility, teams of up to 120, zero-to-one launches, "
@@ -321,7 +321,7 @@ def build():
             "<b>University of Wales Trinity Saint David</b> | Business &amp; Management studies<br/>"
             "<b>ServSafe Manager</b> | Active through 2029 &nbsp;&nbsp; "
             "<b>Languages</b> | English, Arabic, Urdu, Hindi, Punjabi &nbsp;&nbsp; "
-            "<b>Portfolio</b> | sama-mushtaq-program-portfolio.samamak.chatgpt.site",
+            "<b>Portfolio</b> | <link href='https://samamak1.github.io/' color='#354156'>samamak1.github.io</link>",
             compact_style,
         )
     )
