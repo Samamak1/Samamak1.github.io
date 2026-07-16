@@ -75,6 +75,15 @@ p { text-wrap: pretty; }
   background: var(--navy-900); color: var(--white); border-radius: 50%;
   font-size: .78rem; font-weight: 800; letter-spacing: .06em;
 }
+.brand-photo {
+  position: relative; overflow: hidden; isolation: isolate;
+  background: #e9edf5; border: 1px solid rgba(10, 20, 38, .12);
+  box-shadow: 0 2px 8px rgba(10, 20, 38, .12);
+}
+.brand-photo img {
+  position: absolute; top: 0; left: 50%; width: 145%; height: auto;
+  max-width: none; transform: translateX(-50%);
+}
 .brand-copy { display: grid; line-height: 1.22; }
 .brand-copy strong { font-size: .92rem; letter-spacing: -.01em; }
 .brand-copy small { color: var(--ink-soft); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; }
