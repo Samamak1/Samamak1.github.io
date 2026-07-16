@@ -309,7 +309,7 @@ def build():
         "Nov 2019-Present",
         "Digital community and growth program; monetized 2022-2023",
         [
-            "Built a global education community that reached approximately 2,000 members across channels and 1,200+ paid subscribers at peak; a documented Stripe snapshot shows $28.7K MRR and 321 active subscriptions.",
+            "Built a global education community that reached approximately 2,000 members across channels and more than 1,200 cumulative paid subscribers over the program lifecycle; a documented Stripe snapshot shows $28.7K MRR and 321 active subscriptions.",
             "Led brand, acquisition, onboarding, content operations, a 48-page curriculum, member engagement, and a LaunchPass/Stripe to WordPress/MemberPress migration.",
         ],
     )
