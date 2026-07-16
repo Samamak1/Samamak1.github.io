@@ -1,25 +1,58 @@
-// Reveal-on-scroll: opacity/transform only, honors prefers-reduced-motion.
-// Fails open: if anything goes wrong, all content is revealed.
 (function () {
-  var els = document.querySelectorAll('.reveal');
-  function showAll() {
-    for (var i = 0; i < els.length; i++) { els[i].classList.add('is-in'); }
+  "use strict";
+
+  var body = document.body;
+  var toggle = document.querySelector("[data-nav-toggle]");
+  var nav = document.querySelector("[data-nav]");
+  var progress = document.querySelector(".scroll-progress span");
+  var years = document.querySelectorAll("[data-year]");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  for (var y = 0; y < years.length; y += 1) {
+    years[y].textContent = String(new Date().getFullYear());
   }
-  try {
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced || !('IntersectionObserver' in window)) { showAll(); return; }
-    var io = new IntersectionObserver(function (entries) {
-      for (var i = 0; i < entries.length; i++) {
-        if (entries[i].isIntersecting) {
-          entries[i].target.classList.add('is-in');
-          io.unobserve(entries[i].target);
+
+  function closeNavigation() {
+    body.classList.remove("nav-open");
+    if (toggle) toggle.setAttribute("aria-expanded", "false");
+  }
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      var open = body.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+    var links = nav.querySelectorAll("a");
+    for (var i = 0; i < links.length; i += 1) links[i].addEventListener("click", closeNavigation);
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeNavigation();
+    });
+  }
+
+  function updateProgress() {
+    if (!progress) return;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var value = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+    progress.style.width = value + "%";
+  }
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+
+  var revealItems = document.querySelectorAll(".reveal");
+  if (!reduceMotion && "IntersectionObserver" in window && revealItems.length) {
+    document.documentElement.classList.add("reveal-ready");
+    var observer = new IntersectionObserver(function (entries) {
+      for (var j = 0; j < entries.length; j += 1) {
+        if (entries[j].isIntersecting) {
+          entries[j].target.classList.add("is-visible");
+          observer.unobserve(entries[j].target);
         }
       }
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
-    for (var j = 0; j < els.length; j++) { io.observe(els[j]); }
-    // Safety net: whatever happens, nothing stays hidden for long.
-    setTimeout(showAll, 2500);
-  } catch (e) {
-    showAll();
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.08 });
+    for (var k = 0; k < revealItems.length; k += 1) observer.observe(revealItems[k]);
   }
+
+  var printButton = document.querySelector("[data-print-resume]");
+  if (printButton) printButton.addEventListener("click", function () { window.print(); });
 })();
