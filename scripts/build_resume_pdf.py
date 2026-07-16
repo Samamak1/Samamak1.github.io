@@ -34,7 +34,7 @@ def footer(canvas, doc):
     canvas.line(doc.leftMargin, 0.31 * inch, LETTER[0] - doc.rightMargin, 0.31 * inch)
     canvas.setFont("Helvetica", 6.8)
     canvas.setFillColor(MUTED)
-    canvas.drawString(doc.leftMargin, 0.18 * inch, "Sama Mushtaq | Program & Project Leader")
+    canvas.drawString(doc.leftMargin, 0.18 * inch, "Sama Mushtaq, Program and Project Manager")
     page_text = "Page 1"
     canvas.drawString(
         LETTER[0] - doc.rightMargin - stringWidth(page_text, "Helvetica", 6.8),
@@ -49,8 +49,8 @@ name_style = ParagraphStyle(
     "Name",
     parent=styles["Normal"],
     fontName="Helvetica-Bold",
-    fontSize=25,
-    leading=25,
+    fontSize=24,
+    leading=24,
     textColor=NAVY,
     spaceAfter=2,
 )
@@ -58,8 +58,8 @@ title_style = ParagraphStyle(
     "Title",
     parent=styles["Normal"],
     fontName="Helvetica-Bold",
-    fontSize=9.8,
-    leading=11.6,
+    fontSize=9.4,
+    leading=11,
     tracking=0.6,
     textColor=BLUE,
 )
@@ -67,8 +67,8 @@ contact_style = ParagraphStyle(
     "Contact",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=8,
-    leading=10.2,
+    fontSize=7.6,
+    leading=9.8,
     textColor=MUTED,
     alignment=TA_RIGHT,
 )
@@ -76,36 +76,36 @@ summary_style = ParagraphStyle(
     "Summary",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=9.2,
-    leading=12,
+    fontSize=8.65,
+    leading=11,
     textColor=NAVY,
-    spaceAfter=9,
+    spaceAfter=5,
 )
 section_style = ParagraphStyle(
     "Section",
     parent=styles["Normal"],
     fontName="Helvetica-Bold",
-    fontSize=9.4,
-    leading=11.2,
+    fontSize=9,
+    leading=10.5,
     tracking=0.9,
     textColor=NAVY,
-    spaceBefore=10,
-    spaceAfter=5,
+    spaceBefore=6,
+    spaceAfter=4,
 )
 role_style = ParagraphStyle(
     "Role",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=8.9,
-    leading=10.8,
+    fontSize=8.4,
+    leading=9.9,
     textColor=NAVY,
 )
 date_style = ParagraphStyle(
     "Date",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=7.5,
-    leading=9.2,
+    fontSize=7.1,
+    leading=8.7,
     textColor=MUTED,
     alignment=TA_RIGHT,
 )
@@ -113,53 +113,53 @@ category_style = ParagraphStyle(
     "Category",
     parent=styles["Normal"],
     fontName="Helvetica-Bold",
-    fontSize=7,
-    leading=8.6,
+    fontSize=6.6,
+    leading=7.8,
     tracking=0.55,
     textColor=BLUE,
-    spaceAfter=2,
+    spaceAfter=1,
 )
 bullet_style = ParagraphStyle(
     "Bullet",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=8.55,
-    leading=11.15,
-    leftIndent=10,
-    firstLineIndent=-7,
+    fontSize=7.8,
+    leading=9.6,
+    leftIndent=9,
+    firstLineIndent=-6,
     textColor=colors.HexColor("#354156"),
-    spaceAfter=2,
+    spaceAfter=1.2,
 )
 compact_style = ParagraphStyle(
     "Compact",
     parent=styles["Normal"],
     fontName="Helvetica",
-    fontSize=8.15,
-    leading=10.3,
+    fontSize=7.6,
+    leading=9.4,
     textColor=colors.HexColor("#354156"),
-    spaceAfter=1.5,
+    spaceAfter=1.2,
 )
 capability_style = ParagraphStyle(
     "Capabilities",
     parent=styles["Normal"],
     fontName="Helvetica-Bold",
-    fontSize=7.45,
-    leading=9.6,
+    fontSize=7.05,
+    leading=8.9,
     textColor=MUTED,
     backColor=PALE,
-    borderPadding=(4, 6, 4, 6),
-    spaceAfter=6,
+    borderPadding=(3, 5, 3, 5),
+    spaceAfter=3,
 )
 
 
 def section(story, title):
     story.append(Paragraph(title.upper(), section_style))
-    story.append(HRFlowable(width="100%", thickness=0.5, color=LINE, spaceAfter=3.5))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=LINE, spaceAfter=2.5))
 
 
 def role(story, company, title, dates, category, bullets):
     head = Table(
-        [[Paragraph(f"<b>{company}</b> <font color='#566071'>| {title}</font>", role_style), Paragraph(dates, date_style)]],
+        [[Paragraph(f"<b>{company}</b> <font color='#566071'>, {title}</font>", role_style), Paragraph(dates, date_style)]],
         colWidths=[6.3 * inch, 1.0 * inch],
         hAlign="LEFT",
     )
@@ -176,7 +176,7 @@ def role(story, company, title, dates, category, bullets):
     )
     block = [head, Paragraph(category.upper(), category_style)]
     block.extend(Paragraph(f"- {item}", bullet_style) for item in bullets)
-    block.append(Spacer(1, 9.5))
+    block.append(Spacer(1, 3.4))
     story.append(KeepTogether(block))
 
 
@@ -197,7 +197,7 @@ def build():
     header = Table(
         [
             [
-                [Paragraph("Sama Mushtaq", name_style), Paragraph("PROGRAM &amp; PROJECT LEADER", title_style)],
+                [Paragraph("Sama Mushtaq", name_style), Paragraph("PROGRAM AND PROJECT MANAGER", title_style)],
                 Paragraph(
                     "Cincinnati, Ohio<br/>sama.mushtaq.a@gmail.com<br/>"
                     "linkedin.com/in/samamushtaq<br/>github.com/Samamak1",
@@ -221,8 +221,8 @@ def build():
 
     story = [
         header,
-        Spacer(1, 8),
-        HRFlowable(width="100%", thickness=2.1, color=NAVY, spaceAfter=9),
+        Spacer(1, 6),
+        HRFlowable(width="100%", thickness=2.1, color=NAVY, spaceAfter=7),
         Paragraph(
             "Cross-functional program and operations leader with experience spanning approximately "
             "$30M in cumulative P&amp;L responsibility, teams of up to 120, zero-to-one launches, "
@@ -232,7 +232,7 @@ def build():
             summary_style,
         ),
         Paragraph(
-            "PROGRAM STRATEGY  |  PROJECT PLANNING  |  CROSS-FUNCTIONAL LEADERSHIP  |  ROADMAPS &amp; DEPENDENCIES  |  RAID &amp; GOVERNANCE  |  VENDOR MANAGEMENT  |  BUDGET &amp; P&amp;L  |  CHANGE MANAGEMENT  |  KPI DESIGN",
+            "PROGRAM STRATEGY, PROJECT PLANNING, CROSS-FUNCTIONAL LEADERSHIP, ROADMAPS &amp; DEPENDENCIES, RAID &amp; GOVERNANCE<br/>VENDOR MANAGEMENT, BUDGET &amp; P&amp;L, CHANGE MANAGEMENT, PROCESS IMPROVEMENT, KPI DESIGN",
             capability_style,
         ),
     ]
@@ -241,8 +241,8 @@ def build():
     role(
         story,
         "Mercor",
-        "AI Annotator & Quality Reviewer, Contract",
-        "Feb 2026-Present",
+        "AI Annotator and Quality Reviewer, Contract",
+        "Feb 2026 to Present",
         "AI quality operations",
         [
             "Evaluate frontier-model outputs across finance, investment, strategy, business operations, engineering, and generalist work; advanced into reviewer responsibilities based on quality and judgment.",
@@ -251,8 +251,8 @@ def build():
     role(
         story,
         "RYGNeco",
-        "Co-Founder & Program Lead",
-        "2025-Present",
+        "Co-Founder and Program Lead",
+        "2025 to Present",
         "Zero-to-one product and vendor program",
         [
             "Translated an enterprise e-waste pilot into four stakeholder portals spanning intake, testing, disposition, data-destruction records, pricing, and client reporting; directed an approximately $11.5K vendor-built MVP.",
@@ -262,19 +262,19 @@ def build():
     role(
         story,
         "EPIC Brands",
-        "General Manager, promoted from AGM",
-        "Jul 2025-Feb 2026",
+        "General Manager, promoted from Assistant General Manager",
+        "Jul 2025 to Feb 2026",
         "Operating portfolio and concept launch",
         [
-            "Led a $10M portfolio with 70 hourly employees and six managers, contributing to 20-25% year-over-year growth; built an approximately $800K events pipeline and reduced controllable costs by 10%.",
+            "Led a $10M portfolio with 70 hourly employees and six managers, contributing to 20% to 25% year-over-year growth; built an approximately $800K events pipeline and reduced controllable costs by 10%.",
             "Opened Whiskey Yard through SOP development, 30-person hiring and training, and a 150-label whiskey program; bar revenue increased 18%.",
         ],
     )
     role(
         story,
         "Hard Rock Casino Cincinnati",
-        "Operations Manager to AGM to Acting GM",
-        "Jan 2024-Jan 2025",
+        "Operations Manager, promoted to Assistant General Manager and Acting General Manager",
+        "Jan 2024 to Jan 2025",
         "Operational transformation",
         [
             "Held responsibility across three F&amp;B outlets with approximately $17M in combined P&amp;L and 120 employees; recovered approximately $14K per month in variance, maintained inventory variance below 1%, and reduced labor by 10%.",
@@ -284,8 +284,8 @@ def build():
     role(
         story,
         "iTZCALi Tapas & Tequila",
-        "Director of Operations / Launch Consultant",
-        "Sep 2022-Jan 2024",
+        "Director of Operations and Launch Consultant",
+        "Sep 2022 to Jan 2024",
         "High-volume launch program",
         [
             "Coordinated buildout, licensing, menus, vendors, pricing, POS, reservations, staffing, training, payroll, and launch readiness across a fixed opening window.",
@@ -294,22 +294,22 @@ def build():
     )
     role(
         story,
-        "MAK Trading / Trade with MAK",
-        "Founder & Program Lead",
-        "Nov 2019-Present",
-        "Digital community and growth program; monetized 2022-2023",
+        "MAK Trading, Trade with MAK",
+        "Founder and Program Lead",
+        "Nov 2019 to Present",
+        "Digital community and growth program, monetized 2022 to 2023",
         [
-            "Built a global education community that reached approximately 2,000 members across channels and more than 1,200 cumulative paid subscribers over the program lifecycle; a documented Stripe snapshot shows $28.7K MRR and 321 active subscriptions.",
-            "Led brand, acquisition, onboarding, content operations, a 48-page curriculum, member engagement, and a LaunchPass/Stripe to WordPress/MemberPress migration.",
+            "Built a global education community that reached approximately 2,000 members across channels and more than 1,200 cumulative paid subscribers over the program lifetime; a documented Stripe snapshot shows $28.7K MRR and 321 active subscriptions.",
+            "Led brand, acquisition, onboarding, content operations, a 48-page curriculum, member engagement, and a LaunchPass and Stripe to WordPress and MemberPress migration.",
         ],
     )
 
     section(story, "Earlier experience")
     story.append(
         Paragraph(
-            "<b>Napoli Italian Eatery</b> | Opening Manager / Operations Lead | 2021-2022 &nbsp;&nbsp; "
-            "<b>MKEC</b> | Mechanical Design Engineer | 2019-2020 &nbsp;&nbsp; "
-            "<b>Bella Luna Cafe</b> | GM / Multi-Unit Lead | 2016-2019",
+            "<b>Napoli Italian Eatery</b>, Opening Manager and Operations Lead, 2021 to 2022<br/>"
+            "<b>MKEC</b>, Mechanical Design Engineer, 2019 to 2020<br/>"
+            "<b>Bella Luna Cafe</b>, General Manager and Multi-Unit Lead, 2016 to 2019",
             compact_style,
         )
     )
@@ -317,11 +317,11 @@ def build():
     section(story, "Education and credentials")
     story.append(
         Paragraph(
-            "<b>Wichita State University</b> | Mechanical Engineering studies &nbsp;&nbsp; "
-            "<b>University of Wales Trinity Saint David</b> | Business &amp; Management studies<br/>"
-            "<b>ServSafe Manager</b> | Active through 2029 &nbsp;&nbsp; "
-            "<b>Languages</b> | English, Arabic, Urdu, Hindi, Punjabi &nbsp;&nbsp; "
-            "<b>Portfolio</b> | <link href='https://samamak1.github.io/' color='#354156'>samamak1.github.io</link>",
+            "<b>Wichita State University</b>, Mechanical Engineering studies<br/>"
+            "<b>University of Wales Trinity Saint David</b>, Business &amp; Management studies<br/>"
+            "<b>ServSafe Manager</b>, active through 2029<br/>"
+            "<b>Languages</b>, English, Arabic, Urdu, Hindi, Punjabi<br/>"
+            "<b>Portfolio</b>, samamak1.github.io",
             compact_style,
         )
     )

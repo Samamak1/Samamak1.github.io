@@ -1,4 +1,4 @@
-# Sama Mushtaq - Program and Project Leadership Portfolio
+# Sama Mushtaq - Program and Project Manager Portfolio
 
 [View the live portfolio](https://samamak1.github.io/)
 
@@ -26,12 +26,29 @@ Sama's operating pattern is consistent across industries:
 
 ## Selected program cases
 
-| Program | Sama's mandate | Delivery evidence | Outcome status |
-|---|---|---|---|
-| [RYGNeco](https://samamak1.github.io/work/rygneco/) | Co-Founder and Program Lead; field workflow, product requirements, vendor delivery, acceptance, and reporting direction. | Vendor-built dashboard prototype, sanitized workflow reconstruction, and reconstructed delivery roadmap. | Pilot and program facts are aggregate operating claims; dashboard values are fictional sample data. |
-| [Hard Rock Casino Cincinnati](https://samamak1.github.io/work/hard-rock/) | Operations Manager -> AGM -> Acting GM; financial controls, workforce capability, adoption, and management cadence. | Original server-certification artifact plus sanitized operating-model reconstruction. | Aggregate operating results are leadership-account claims; confidential P&Ls and employee records are withheld. |
-| [iTZCALi Tapas and Tequila](https://samamak1.github.io/work/itzcali/) | **Director of Operations / Launch Consultant; not owner or founder.** | Sanitized launch roadmap, operating photo, pricing system, layouts, menu, and process evidence. | Aggregate launch outcomes are operating-record and leadership-account claims. |
-| [MAK Trading](https://samamak1.github.io/work/mak-trading/) | Founder and Program Lead; brand, acquisition, onboarding, curriculum, membership, retention, and platform migration. | Direct Stripe snapshots and sanitized platform reconstruction. | Approximately 2,000 peak community members and more than 1,200 cumulative paid subscribers across the program lifetime are founder-reported aggregates; MRR and active-subscription figures are dated Stripe snapshots. |
+### [RYGNeco](https://samamak1.github.io/work/rygneco/)
+
+- **Mandate:** Co-Founder and Program Lead responsible for field workflow, product requirements, vendor delivery, acceptance, and reporting direction.
+- **Evidence:** Vendor-built dashboard prototype, sanitized workflow reconstruction, and reconstructed delivery roadmap.
+- **Evidence boundary:** Pilot and program facts are aggregate operating claims. Dashboard values are fictional sample data.
+
+### [Hard Rock Casino Cincinnati](https://samamak1.github.io/work/hard-rock/)
+
+- **Mandate:** Operations Manager, promoted to Assistant General Manager and Acting General Manager. Led financial controls, workforce capability, adoption, and management cadence.
+- **Evidence:** Original server-certification artifact plus sanitized operating-model reconstruction.
+- **Evidence boundary:** Aggregate operating results are leadership-account claims. Confidential P&Ls and employee records are withheld.
+
+### [iTZCALi Tapas and Tequila](https://samamak1.github.io/work/itzcali/)
+
+- **Mandate:** Director of Operations and Launch Consultant, not owner or founder.
+- **Evidence:** Sanitized launch roadmap, operating photo, pricing system, layouts, menu, and process evidence.
+- **Evidence boundary:** Aggregate launch outcomes are operating-record and leadership-account claims.
+
+### [MAK Trading](https://samamak1.github.io/work/mak-trading/)
+
+- **Mandate:** Founder and Program Lead responsible for brand, acquisition, onboarding, curriculum, membership, retention, and platform migration.
+- **Evidence:** Direct Stripe snapshots and sanitized platform reconstruction.
+- **Evidence boundary:** Approximately 2,000 peak community members and more than 1,200 cumulative paid subscribers across the program lifetime are founder-reported aggregates. MRR and active-subscription figures are dated Stripe snapshots.
 
 ## Supporting operating systems
 
@@ -45,36 +62,29 @@ Sama's operating pattern is consistent across industries:
 
 The portfolio uses explicit provenance labels so visual polish is not mistaken for stronger proof than the source supports.
 
-| Label | Meaning |
-|---|---|
-| Documented platform snapshot | Direct capture from a source platform at a specific point in time. |
-| Operating record | Aggregate result supported by historical operating materials that remain private. |
-| Leadership-account claim | Result reported from Sama's management records or direct operating knowledge; not independently audited in the public repository. |
-| Original artifact | Historical work product shown substantially as created, with publication review. |
-| Sanitized original | Historical artifact with identities, confidential values, or sensitive fields physically removed. |
-| Reconstruction | Retrospective recreation of the operating model after sensitive details were removed. |
-| Representative sample | Fresh output created from anonymized or substitute data while preserving system behavior. |
-| Illustrative prototype | Product or interface concept containing fictional or sample values; not evidence of business results. |
+- **Documented platform snapshot:** Direct capture from a source platform at a specific point in time.
+- **Operating record:** Aggregate result supported by historical operating materials that remain private.
+- **Leadership-account claim:** Result reported from Sama's management records or direct operating knowledge. It is not independently audited in the public repository.
+- **Original artifact:** Historical work product shown substantially as created, with publication review.
+- **Sanitized original:** Historical artifact with identities, confidential values, or sensitive fields physically removed.
+- **Reconstruction:** Retrospective recreation of the operating model after sensitive details were removed.
+- **Representative sample:** Fresh output created from anonymized or substitute data while preserving system behavior.
+- **Illustrative prototype:** Product or interface concept containing fictional or sample values. It is not evidence of business results.
 
 ## Repository structure
 
-```text
-/
-|-- index.html                  Portfolio home
-|-- style.css                   Shared visual system and responsive layout
-|-- script.js                   Navigation, interaction, and print behavior
-|-- images/                     Reviewed public evidence and site imagery
-|-- work/
-|   |-- rygneco/                Zero-to-one product program case
-|   |-- hard-rock/              Operational transformation case
-|   |-- itzcali/                Restaurant launch case
-|   `-- mak-trading/            Community and recurring-revenue case
-|-- resume/
-|   |-- index.html              Web resume
-|   `-- *.pdf                   One-page formatted resume
-|-- scripts/                    Build, validation, and resume-generation scripts
-`-- package.json                Local validation and build commands
-```
+- `index.html`: Portfolio home
+- `style.css`: Shared visual system and responsive layout
+- `script.js`: Navigation, interaction, and print behavior
+- `images`: Reviewed public evidence and site imagery
+- `work/rygneco`: Zero-to-one product program case
+- `work/hard-rock`: Operational transformation case
+- `work/itzcali`: Restaurant launch case
+- `work/mak-trading`: Community and recurring-revenue case
+- `resume/index.html`: Web resume
+- `resume/*.pdf`: One-page formatted resume
+- `scripts`: Build, validation, and resume-generation scripts
+- `package.json`: Local validation and build commands
 
 ## Local validation
 
