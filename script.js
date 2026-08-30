@@ -1,16 +1,8 @@
 (function () {
   "use strict";
-
   var body = document.body;
   var toggle = document.querySelector("[data-nav-toggle]");
   var nav = document.querySelector("[data-nav]");
-  var progress = document.querySelector(".scroll-progress span");
-  var years = document.querySelectorAll("[data-year]");
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  for (var y = 0; y < years.length; y += 1) {
-    years[y].textContent = String(new Date().getFullYear());
-  }
 
   function closeNavigation() {
     body.classList.remove("nav-open");
@@ -27,29 +19,49 @@
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") closeNavigation();
     });
+    document.addEventListener("click", function (event) {
+      if (body.classList.contains("nav-open") && !event.target.closest(".nav-pill")) closeNavigation();
+    });
   }
 
-  function updateProgress() {
-    if (!progress) return;
-    var max = document.documentElement.scrollHeight - window.innerHeight;
-    var value = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
-    progress.style.width = value + "%";
-  }
-  updateProgress();
-  window.addEventListener("scroll", updateProgress, { passive: true });
-  window.addEventListener("resize", updateProgress);
-
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var revealItems = document.querySelectorAll(".reveal");
-  if (!reduceMotion && "IntersectionObserver" in window && revealItems.length) {
-    document.documentElement.classList.add("reveal-ready");
+
+  function formatNumber(value) {
+    return String(Math.round(value)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  function runCounter(el) {
+    var target = parseFloat(el.getAttribute("data-count"));
+    var prefix = el.getAttribute("data-prefix") || "";
+    var suffix = el.getAttribute("data-suffix") || "";
+    var duration = 1400;
+    var start = null;
+    function step(timestamp) {
+      if (start === null) start = timestamp;
+      var progress = Math.min(1, (timestamp - start) / duration);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = prefix + formatNumber(target * eased) + suffix;
+      if (progress < 1) window.requestAnimationFrame(step);
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("motion-ok");
+    var seenCounters = new WeakSet();
     var observer = new IntersectionObserver(function (entries) {
       for (var j = 0; j < entries.length; j += 1) {
-        if (entries[j].isIntersecting) {
-          entries[j].target.classList.add("is-visible");
-          observer.unobserve(entries[j].target);
+        if (!entries[j].isIntersecting) continue;
+        var el = entries[j].target;
+        el.classList.add("is-visible");
+        var nums = el.querySelectorAll("[data-count]");
+        for (var n = 0; n < nums.length; n += 1) {
+          if (!seenCounters.has(nums[n])) { seenCounters.add(nums[n]); runCounter(nums[n]); }
         }
+        observer.unobserve(el);
       }
-    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.08 });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.15 });
     for (var k = 0; k < revealItems.length; k += 1) observer.observe(revealItems[k]);
   }
 
