@@ -322,10 +322,30 @@ figure.fig figcaption b { color: var(--ink-2); font-weight: 800; }
 .resume-role li { margin-bottom: 3px; }
 .resume-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .resume-bottom p { margin-bottom: 6px; }
+.resume-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.resume-project p { margin: 4px 0 0; }
+.resume-project h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.resume-project h3 a:hover { color: var(--accent); border-color: var(--accent); }
 @media (max-width: 700px) { .resume-sheet { padding: 32px 22px; } .resume-head { flex-direction: column; } .resume-contact { text-align: left; } .resume-bottom { grid-template-columns: 1fr; } .resume-role-head { flex-direction: column; gap: 2px; } }
 @media print {
   .site-header, .resume-toolbar, .site-footer { display: none !important; }
   body, .resume-page { background: #fff; }
-  .resume-sheet { width: auto; margin: 0; border: 0; box-shadow: none; padding: 0; font-size: 10.5pt; }
-  a { color: inherit; }
+  .resume-sheet { width: auto; margin: 0; border: 0; box-shadow: none; padding: 0; font-size: 9.5pt; line-height: 1.37; }
+  .resume-role, .resume-project { break-inside: avoid; page-break-inside: avoid; }
+  .resume-head { flex-direction: row; }
+  .resume-contact { text-align: right; }
+  .resume-bottom { grid-template-columns: 1fr 1fr; }
+  .resume-role-head { flex-direction: row; gap: 16px; }
+  .resume-summary { margin-bottom: 8px; }
+  .resume-skills { margin: 8px 0 14px; }
+  .resume-section { margin-bottom: 10px; }
+  .resume-head { padding-bottom: 10px; margin-bottom: 12px; }
+  .resume-sheet, .resume-bottom, .resume-bottom .resume-section, .resume-bottom p:last-child, .resume-role:last-child, .resume-role:last-child li:last-child { margin-bottom: 0; }
+  html, body { height: auto; }
+  .resume-role { margin-bottom: 8px; }
+  .resume-section h2 { break-after: avoid; page-break-after: avoid; }
+  .resume-skills span { background: #f1f2ee; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 7.4pt; padding: 3px 6px; }
+  .resume-bottom { gap: 18px; }
+  .page-glow { display: none; }
+  a { color: inherit; text-decoration: none; }
 }
