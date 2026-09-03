@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="Manrope, Inter, system-ui, sans-serif" role="img" aria-label="Vibration amplitude by sample for three sensor channels, 1,023 samples">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="Manrope, Inter, system-ui, sans-serif" role="img" aria-label="Vibration amplitude by sample for three sensor channels, 1,022 samples">
 <rect width="1200" height="520" fill="#ffffff" rx="0"/>
 <line x1="70" x2="1176" y1="425.0" y2="425.0" stroke="#ECECE8" stroke-width="1"/>
 <text x="60" y="429.0" text-anchor="end" font-size="15" fill="#6B7280">0</text>

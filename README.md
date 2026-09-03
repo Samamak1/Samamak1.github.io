@@ -1,27 +1,26 @@
-# Sama Mushtaq, portfolio
+# Sama Mushtaq
 
-Live site, https://samamak1.github.io/
+This is my mechanical design and test portfolio.
 
-Program manager with a mechanical engineering background, completing the BSME at the University of Cincinnati in 2027. The site presents engineering and design projects, program case studies, and a resume.
+I began in mechanical engineering and later spent years leading operations, product work, and technical programs. The site brings those parts together without letting the operations story hide the engineering work.
 
-## Structure
+The first read now leads with professional MEP design at MKEC Engineering, vibration sensing in LabVIEW, heat exchanger design, structural analysis, and electronics testing. The wider case studies show how I apply the same habits to product requirements, operating controls, and research systems.
 
-- `index.html`, home page, engineering projects first, program cases second, experience, contact
-- `engineering/`, project pages built from the original reports and records
-  - `vibration-rig/`, vibration sensing and data acquisition, Wichita State, 2016
-  - `kite-buggy/`, kite buggy design and structural analysis, Wichita State, 2015
-  - `heat-exchanger/`, shell and tube heat exchanger design study, Wichita State, 2016
-  - `device-testing/`, device processing and chain of custody at RYGNeco, 2024 to present
-- `work/`, program case studies, RYGNeco, Hard Rock Casino Cincinnati, iTZCALi, MAK Trading
-- `resume/`, print ready resume page and PDF
-- `style.css`, one shared visual system, square corners, translucent surfaces, reveal and count-up motion with a reduced motion fallback
-- `script.js`, navigation, reveal on scroll, count-up tiles, print
-- `images/`, site imagery, `images/marks/` brand marks for the logo strip and cases, `images/engineering/` project figures
+## Start here
 
-## Evidence labels
+* [Live portfolio](https://samamak1.github.io)
+* [Mechanical design at MKEC Engineering](https://samamak1.github.io/engineering/mechanical-design/)
+* [Vibration sensing and data acquisition](https://samamak1.github.io/engineering/vibration-rig/)
+* [Shell and tube heat exchanger design](https://samamak1.github.io/engineering/heat-exchanger/)
+* [Kite buggy structural analysis](https://samamak1.github.io/engineering/kite-buggy/)
+* [Engineering resume](https://samamak1.github.io/resume/)
 
-Figures on the project pages carry a label. Original artifact means the document or plot as produced at the time. Team artifact means a teammate produced it as part of the same project. Platform screen, sample data means a product screen showing fictional values. Replotted means the chart was redrawn from the original exported data.
+## Site structure
 
-## Publishing
+* `index.html` carries the main engineering story, selected work, experience, education, and contact details
+* `engineering` holds the professional and academic mechanical work
+* `work` holds RYGNeco, Hard Rock, iTZCALi, and MAK Trading case studies
+* `resume` holds the web resume and downloadable PDF
+* `images` holds original project figures, sanitized work evidence, brand marks, and site photography
 
-Static files on GitHub Pages from the `main` branch. No build step.
+The portfolio is a static site published from the main branch through GitHub Pages.
