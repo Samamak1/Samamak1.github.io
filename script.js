@@ -7,12 +7,18 @@
   function closeNavigation() {
     body.classList.remove("nav-open");
     if (toggle) toggle.setAttribute("aria-expanded", "false");
+    if (toggle) {
+      var closeLabel = toggle.querySelector(".sr-only");
+      if (closeLabel) closeLabel.textContent = "Open navigation";
+    }
   }
 
   if (toggle && nav) {
     toggle.addEventListener("click", function () {
       var open = body.classList.toggle("nav-open");
       toggle.setAttribute("aria-expanded", String(open));
+      var label = toggle.querySelector(".sr-only");
+      if (label) label.textContent = open ? "Close navigation" : "Open navigation";
     });
     var links = nav.querySelectorAll("a");
     for (var i = 0; i < links.length; i += 1) links[i].addEventListener("click", closeNavigation);
@@ -22,6 +28,8 @@
     document.addEventListener("click", function (event) {
       if (body.classList.contains("nav-open") && !event.target.closest(".nav-pill")) closeNavigation();
     });
+    var desktopNav = window.matchMedia("(min-width: 861px)");
+    if (desktopNav.addEventListener) desktopNav.addEventListener("change", function (event) { if (event.matches) closeNavigation(); });
   }
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
