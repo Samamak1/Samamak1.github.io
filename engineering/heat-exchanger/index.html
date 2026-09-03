@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shell and tube heat exchanger design study, Sama Mushtaq</title>
-  <meta name="description" content="A countercurrent water to oil shell and tube exchanger designed from requirements to dimensions, with ten materials compared across clean and fouled conditions.">
+  <title>Shell and Tube Heat Exchanger Design, Sama Mushtaq</title>
+  <meta name="description" content="A shell and tube heat exchanger study comparing ten materials under clean and fouled conditions.">
   <meta name="theme-color" content="#f6f6f3">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Shell and tube heat exchanger design study, Sama Mushtaq">
-  <meta property="og:description" content="A countercurrent water to oil shell and tube exchanger designed from requirements to dimensions, with ten materials compared across clean and fouled conditions.">
+  <meta property="og:title" content="Shell and Tube Heat Exchanger Design, Sama Mushtaq">
+  <meta property="og:description" content="Ten materials compared under clean and fouled conditions.">
   <meta property="og:image" content="https://samamak1.github.io/images/og-card.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/images/sama-nav-avatar-256.png">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/style.css">
   <script src="/script.js" defer></script>
 </head>
-<body class="detail">
+<body class="detail concise-detail">
   <div class="page-glow" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -31,7 +31,6 @@
       <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-nav>
         <a href="/#work">Work</a>
         <a href="/#experience">Experience</a>
-        <a href="/#about">About</a>
         <a href="/resume/">Resume</a>
         <a class="nav-cta" href="/#contact">Contact</a>
       </nav>
@@ -39,49 +38,54 @@
   </header>
 
   <main id="main">
-    
     <section class="detail-hero">
-      
       <div class="shell">
         <a class="back-link" href="/#work">Back to selected work</a>
-        <span class="eyebrow">Engineering</span>
-        <h1>Shell and tube heat exchanger design study</h1>
-        <p class="lead">An individual design study that sized a countercurrent water to oil shell and tube exchanger from requirements to dimensions and compared ten materials across a clean surface and two fouling conditions.</p>
-        <dl class="facts"><div><dt>Where</dt><dd>Wichita State University, ME 750C</dd></div><div><dt>When</dt><dd>May 2016</dd></div><div><dt>My role</dt><dd>Individual project, method, calculations, and report</dd></div><div><dt>Scope</dt><dd>Heat duty, flow regime, coefficients, material selection, area and length, cost</dd></div></dl>
+        <span class="eyebrow">Thermal design</span>
+        <h1>Shell and tube heat exchanger design</h1>
+        <p class="lead">For an individual ME 750C project, I sized a countercurrent water to oil shell and tube heat exchanger and compared ten materials under clean and two fouling conditions.</p>
+        <dl class="facts">
+          <div><dt>Where</dt><dd>Wichita State University, ME 750C</dd></div>
+          <div><dt>When</dt><dd>May 2016</dd></div>
+          <div><dt>Role</dt><dd>Method, calculations, comparison, and report</dd></div>
+          <div><dt>Scope</dt><dd>Heat duty, flow, coefficients, area, and tube length</dd></div>
+        </dl>
       </div>
     </section>
+
     <article class="detail-body shell">
-      <section>
-        <h2>The question</h2>
-        <p>A heat exchanger is only as good as the heat it moves for the space it takes and the money it costs. The paper asked how much effectiveness could be gained on one common type, a shell and tube exchanger with countercurrent flow, by working the design correlations carefully and choosing the material and the dimensions on evidence instead of habit.</p>
+      <section class="evidence-first">
+        <figure class="fig">
+          <img src="/images/engineering/hx-calc-sheet-2.webp" alt="Heat exchanger results comparing ten materials and fouling conditions" width="1600" height="579" loading="eager" decoding="async">
+          <figcaption><b>Material comparison.</b> Overall coefficient, required area, and tube length under clean and fouled conditions.</figcaption>
+        </figure>
       </section>
+
+      <section class="reading-width">
+        <h2>Method</h2>
+        <p>I began with the inlet and outlet temperatures, mass flow rates, and allowable pressure drop. I used fluid properties at the bulk temperatures to calculate heat duty, identified each flow regime with Reynolds number, selected the appropriate Nusselt correlations, and calculated the inside and outside heat transfer coefficients.</p>
+        <p>I combined those values into an overall coefficient and repeated the analysis with fouling resistance for seawater cooling below and above 325 K. Each of the ten materials went through the same calculation so conductivity, cost, required area, and tube length could be compared on the same basis.</p>
+        <p>Baffles remained in the design to support the tube bundle and direct shell side crossflow. Pressure drop stayed in the requirements because stronger crossflow also increases pumping demand.</p>
+        <p>The final deliverable was a documented analytical design with dimensions and material comparisons for all three surface conditions.</p>
+      </section>
+
       <section>
-        <h2>The method</h2>
-        <div class="two-col">
-          <div>
-            <ul>
-              <li>Set the requirements, inlet and outlet temperatures, mass flow rates, and allowable pressure drop.</li>
-              <li>Pull fluid properties at the bulk temperatures.</li>
-              <li>Calculate the required heat transfer rate.</li>
-              <li>Use the Reynolds number to settle whether each stream is laminar or turbulent, developing or fully developed.</li>
-              <li>Use Nusselt number correlations for the inside and outside coefficients, with the log mean temperature difference and the countercurrent correction factor.</li>
-              <li>Build the overall coefficient for a clean surface, then repeat with fouling resistances for seawater cooling below and above 325 K.</li>
-              <li>Run ten candidate materials through the same equations and eliminate on conductivity, cost, and the resulting area and tube length.</li>
-            </ul>
-          </div>
-          <div>
-            <p>Baffles were kept in the design for the three things they do at once. They slow fouling from impurities, they support the tube bundle, and they raise the outside coefficient by forcing cross flow. Their cost showed up in the pressure drop, which is why the pressure drop sat in the requirements from the first step.</p>
-            <p>The result was a set of dimensions for each condition, clean, fouled cold, and fouled hot, so the trade between a compact exchanger and a tolerant one was explicit rather than hidden in a single answer.</p>
-          </div>
+        <h2>Working calculations</h2>
+        <figure class="fig">
+          <img src="/images/engineering/hx-calc-sheet-1.webp" alt="Heat exchanger assumptions and working equations" width="1600" height="682" loading="lazy" decoding="async">
+          <figcaption><b>Calculation sheet.</b> Properties, assumptions, heat duty, Reynolds number, Nusselt correlations, and overall coefficient.</figcaption>
+        </figure>
+        <p class="limit">This was an analytical course project and was not built or physically tested.</p>
+      </section>
+
+      <section>
+        <h2>Keep reading</h2>
+        <div class="detail-nav">
+          <a class="button button-quiet" href="/engineering/kite-buggy/">Structural analysis</a>
+          <a class="button button-quiet" href="/engineering/vibration-rig/">Vibration sensing</a>
+          <a class="button button-primary" href="/#contact">Get in touch</a>
         </div>
       </section>
-      <section>
-        <h2>The calculation sheets</h2>
-        <figure class="fig"><img src="/images/engineering/hx-calc-sheet-1.webp" alt="Calculation sheet with assumptions and equations" width="1600" height="682" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> Assumptions, property lookups, and the working equations for heat duty, Reynolds number, Nusselt correlations, and the overall coefficient.</figcaption></figure>
-        <figure class="fig"><img src="/images/engineering/hx-calc-sheet-2.webp" alt="Results sheet comparing materials and fouling conditions" width="1600" height="579" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> The comparison across materials and fouling conditions. Overall coefficient, required area, and tube length for each case, with the best options highlighted.</figcaption></figure>
-        <p class="limit">The paper was course work for ME 750C and was not built or tested. It is shown here for the method and the documentation.</p>
-      </section>
-      <section><h2>Keep reading</h2><div class="detail-nav"><a class="button button-quiet" href="/engineering/kite-buggy/">Kite buggy design and analysis</a><a class="button button-quiet" href="/engineering/vibration-rig/">Vibration sensing rig</a><a class="button button-primary" href="/#contact">Get in touch</a></div></section>
     </article>
   </main>
 

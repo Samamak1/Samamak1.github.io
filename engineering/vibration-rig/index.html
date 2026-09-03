@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vibration sensing and data acquisition, Sama Mushtaq</title>
-  <meta name="description" content="A two-sensor vibration rig with three channels captured in LabVIEW, 1,022 samples, and the troubleshooting that separated sensor faults from mounting faults.">
+  <title>Vibration Sensing and Data Acquisition, Sama Mushtaq</title>
+  <meta name="description" content="A two sensor vibration rig with three LabVIEW channels, 1,022 recorded samples, repeat trials, and signal troubleshooting.">
   <meta name="theme-color" content="#f6f6f3">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Vibration sensing and data acquisition, Sama Mushtaq">
-  <meta property="og:description" content="A two-sensor vibration rig with three channels captured in LabVIEW, 1,022 samples, and the troubleshooting that separated sensor faults from mounting faults.">
+  <meta property="og:title" content="Vibration Sensing and Data Acquisition, Sama Mushtaq">
+  <meta property="og:description" content="Three LabVIEW channels, 1,022 recorded samples, repeat trials, and signal troubleshooting.">
   <meta property="og:image" content="https://samamak1.github.io/images/og-card.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/images/sama-nav-avatar-256.png">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/style.css">
   <script src="/script.js" defer></script>
 </head>
-<body class="detail">
+<body class="detail concise-detail">
   <div class="page-glow" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -31,7 +31,6 @@
       <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-nav>
         <a href="/#work">Work</a>
         <a href="/#experience">Experience</a>
-        <a href="/#about">About</a>
         <a href="/resume/">Resume</a>
         <a class="nav-cta" href="/#contact">Contact</a>
       </nav>
@@ -39,54 +38,53 @@
   </header>
 
   <main id="main">
-    
     <section class="detail-hero">
-      
       <div class="shell">
         <a class="back-link" href="/#work">Back to selected work</a>
-        <span class="eyebrow">Engineering</span>
+        <span class="eyebrow">Instrumentation and testing</span>
         <h1>Vibration sensing and data acquisition</h1>
-        <p class="lead">A two-sensor instrumentation project, three channels captured in LabVIEW and 1,022 samples analyzed to separate genuine events from mounting and wiring faults.</p>
-        <dl class="facts"><div><dt>Where</dt><dd>Wichita State University, ME 633</dd></div><div><dt>When</dt><dd>Spring 2016</dd></div><div><dt>My role</dt><dd>Individual project, fixture, wiring, acquisition, and analysis</dd></div><div><dt>Tools</dt><dd>LabVIEW DAQ, Arduino Uno, Keyestudio KS0037, MiniSense 100, Excel</dd></div></dl>
+        <p class="lead">I built and wired a two sensor vibration rig and recorded three channels in LabVIEW. The final data set contains 1,022 samples. Repeat trials, channel swaps, and connection checks helped isolate wiring and mounting faults.</p>
+        <dl class="facts">
+          <div><dt>Where</dt><dd>Wichita State University, ME 633</dd></div>
+          <div><dt>When</dt><dd>Spring 2016</dd></div>
+          <div><dt>Role</dt><dd>Fixture, wiring, acquisition, and analysis</dd></div>
+          <div><dt>Tools</dt><dd>LabVIEW, Arduino Uno, two sensors, and Excel</dd></div>
+        </dl>
       </div>
     </section>
+
     <article class="detail-body shell">
-      <section>
-        <h2>The idea</h2>
-        <p>Detect surface vibration with two sensor types, record the amplitudes and periods, convert them into an earthquake style magnitude, and compare that magnitude against a criticality threshold so a user gets a warning with time to act. The Keyestudio KS0037 gave an analog and a digital channel and responded to small movements. The MiniSense 100 piezo element was there for the large events and to cross check the noisier channel.</p>
+      <section class="evidence-first">
+        <figure class="fig">
+          <img src="/images/engineering/vib-three-channel.svg" alt="Three vibration channels plotted across 1,022 samples" width="1200" height="520" loading="eager" decoding="async">
+          <figcaption><b>Recorded data.</b> Three raw voltage channels replotted against sample number from the LabVIEW export.</figcaption>
+        </figure>
       </section>
+
+      <section class="reading-width">
+        <h2>Test setup and method</h2>
+        <p>The Keyestudio KS0037 supplied analog and digital outputs. The MiniSense 100 piezo element supplied a second sensor response. I assembled the mounts and test fixture, wired the sensors to an Arduino Uno, and recorded all three channels in LabVIEW. The final file contains samples 4310 through 5331.</p>
+        <p>Each trial followed the same process. I excited the surface, captured the channels, plotted the response, and checked whether the same event appeared across the sensors. When one channel disagreed, I swapped the input, reseated the connection, checked the mount, and repeated the trial.</p>
+        <p>The recorded peaks were 3.57 volts on the Keyestudio analog output, 4.99 volts on the MiniSense, and 4.17 volts on the Keyestudio digital output. In this run, the Keyestudio analog response showed a longer decay after each event. The MiniSense returned to baseline faster, which made separate events easier to distinguish.</p>
+        <p>The side by side traces made troubleshooting possible. A response that appeared on only one channel could be checked against the wiring, input assignment, and sensor mount before it was treated as a surface event.</p>
+      </section>
+
       <section>
-        <h2>The setup</h2>
-        <div class="two-col">
-          <div>
-            <p>I designed and assembled the sensor mounts, the test fixture, and the physical setup, then wired the sensors to the Arduino Uno and brought the signals into LabVIEW as three analog input channels. AI0 carried the Keyestudio analog output, AI1 the MiniSense, and AI2 the Keyestudio digital output. LabVIEW wrote every sample to a spreadsheet so the run could be plotted and compared afterward.</p>
-            <p>Every run followed the same loop. Excite the surface, capture the channels, plot them, and check whether a spike on one channel showed up on the others. When a channel disagreed, I swapped channels, reseated connections, and repeated the trial until the cause was clear.</p>
-          </div>
-          <div>
-            <ul>
-              <li>Three channels sampled together, so timing could be compared across sensors.</li>
-              <li>1,022 samples preserved in the final data set, sample numbers 4310 to 5331.</li>
-              <li>Peak amplitudes of 3.57 V on the Keyestudio analog channel, 4.99 V on the MiniSense, and 4.17 V on the digital channel.</li>
-              <li>Channel swaps, connection checks, and repeat trials used to separate sensor faults from mounting, cabling, and mechanical effects.</li>
-            </ul>
-          </div>
+        <h2>Original LabVIEW output</h2>
+        <figure class="fig pad compact-figure">
+          <img src="/images/engineering/vib-labview-output.png" alt="Original LabVIEW output plot with three channels" loading="lazy" decoding="async">
+          <figcaption><b>Original artifact.</b> The three channel output captured during the run.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Keep reading</h2>
+        <div class="detail-nav">
+          <a class="button button-quiet" href="/engineering/kite-buggy/">Structural analysis</a>
+          <a class="button button-quiet" href="/engineering/heat-exchanger/">Heat exchanger design</a>
+          <a class="button button-primary" href="/#contact">Get in touch</a>
         </div>
       </section>
-      <section>
-        <h2>The data</h2>
-        <figure class="fig"><img src="/images/engineering/vib-three-channel.svg" alt="Line chart of three vibration channels over 1,022 samples" width="1200" height="520" loading="lazy" decoding="async"><figcaption><b>Replotted from the original LabVIEW export.</b> AI0 is the Keyestudio analog output, AI1 the MiniSense piezo element, AI2 the Keyestudio digital output. The blue decay tails after each event are the analog channel settling, the sharp orange spikes are the MiniSense catching the same events and returning to zero almost at once.</figcaption></figure>
-        <div class="fig-grid two">
-          <figure class="fig pad"><img src="/images/engineering/vib-labview-output.png" alt="Original LabVIEW output plot with three channels" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> The LabVIEW output plot as captured during the run.</figcaption></figure>
-          <figure class="fig pad"><img src="/images/engineering/vib-excel-chart.png" alt="Excel chart of the three sensor channels" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> The same channels charted in Excel from the LabVIEW export, amplitude in microns against time.</figcaption></figure>
-        </div>
-        <p>What the two sensors showed side by side is the useful part. The analog channel is sensitive but slow to settle, so it smears events together. The MiniSense is less sensitive to small motion but returns to baseline quickly, which makes it the better event counter. Reading them together gave a cleaner picture than either one alone, and it made the bad readings stand out, because a spike that appeared on only one channel usually traced back to a loose lead or a mount that had shifted rather than to the surface.</p>
-      </section>
-      <section>
-        <h2>From amplitude to magnitude</h2>
-        <p>The writeup used the standard body wave and surface wave magnitude correlations, where the amplitude of ground motion in microns and the corresponding period in seconds feed a magnitude estimate with a distance and depth correction. The recorded amplitudes were the input to that calculation, and the criticality comparison was the planned next step for turning the rig into a warning device.</p>
-        <p class="limit">The magnitude calculation was outlined in the project writeup and was not calibrated against a seismograph, so this page presents the rig, the acquisition, and the data, not a validated seismic instrument.</p>
-      </section>
-      <section><h2>Keep reading</h2><div class="detail-nav"><a class="button button-quiet" href="/engineering/kite-buggy/">Kite buggy design and analysis</a><a class="button button-quiet" href="/engineering/device-testing/">Device processing at RYGNeco</a><a class="button button-primary" href="/#contact">Get in touch</a></div></section>
     </article>
   </main>
 

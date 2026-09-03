@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kite buggy design and structural analysis, Sama Mushtaq</title>
-  <meta name="description" content="A five-person ME 439 design project. Impact, tipping, and deflection analysis that sized a 29.7 lb aluminum kite buggy against a 10 foot drop.">
+  <title>Kite Buggy Structural Analysis, Sama Mushtaq</title>
+  <meta name="description" content="Load, stress, deflection, weight, and cost analysis for a portable 6061 aluminum kite buggy.">
   <meta name="theme-color" content="#f6f6f3">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Kite buggy design and structural analysis, Sama Mushtaq">
-  <meta property="og:description" content="A five-person ME 439 design project. Impact, tipping, and deflection analysis that sized a 29.7 lb aluminum kite buggy against a 10 foot drop.">
+  <meta property="og:title" content="Kite Buggy Structural Analysis, Sama Mushtaq">
+  <meta property="og:description" content="Load, stress, deflection, weight, and cost analysis for a portable 6061 aluminum frame.">
   <meta property="og:image" content="https://samamak1.github.io/images/og-card.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/images/sama-nav-avatar-256.png">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/style.css">
   <script src="/script.js" defer></script>
 </head>
-<body class="detail">
+<body class="detail concise-detail">
   <div class="page-glow" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -31,7 +31,6 @@
       <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-nav>
         <a href="/#work">Work</a>
         <a href="/#experience">Experience</a>
-        <a href="/#about">About</a>
         <a href="/resume/">Resume</a>
         <a class="nav-cta" href="/#contact">Contact</a>
       </nav>
@@ -39,75 +38,70 @@
   </header>
 
   <main id="main">
-    
     <section class="detail-hero">
-      
       <div class="shell">
         <a class="back-link" href="/#work">Back to selected work</a>
-        <span class="eyebrow">Engineering</span>
+        <span class="eyebrow">Structural analysis</span>
         <h1>Kite buggy design and structural analysis</h1>
-        <p class="lead">A five-person design project that sized a 29.7 pound aluminum kite buggy against a ten foot drop, a 30 pound weight limit, and a $400 budget. My share was the load, stress, and deflection analysis.</p>
-        <dl class="facts"><div><dt>Where</dt><dd>Wichita State University, ME 439 Mechanical Engineering Design I</dd></div><div><dt>When</dt><dd>Spring 2015</dd></div><div><dt>My role</dt><dd>Load, stress, and deflection calculations, shared with two teammates</dd></div><div><dt>Team</dt><dd>Five students, CATIA modeling and drafting by a teammate</dd></div></dl>
+        <p class="lead">A five person ME 439 project that modeled a portable 6061 aluminum buggy against a 30 pound weight limit, a $400 parts budget, and a ten foot drop case. I shared the load, stress, and deflection calculations with two teammates.</p>
+        <dl class="facts">
+          <div><dt>Where</dt><dd>Wichita State University, ME 439</dd></div>
+          <div><dt>When</dt><dd>Spring 2015</dd></div>
+          <div><dt>Role</dt><dd>Load, stress, and deflection calculations</dd></div>
+          <div><dt>Team</dt><dd>Five students</dd></div>
+        </dl>
       </div>
     </section>
+
     <article class="detail-body shell">
-      <section>
-        <h2>The brief</h2>
-        <div class="two-col">
-          <div>
-            <p>Design a kite buggy that beats the market on price, weight, portability, and safety. Manufacturing cost under $400, weight at or under 30 lb, folds into the trunk of a small car, survives a 10 foot drop, and stays controllable at speeds up to 40 mph. The team split the work at the first meeting. One teammate owned the CATIA model and drafting, one owned the report, and three of us, including me, owned the calculations.</p>
-          </div>
-          <div>
-            <dl class="result-grid" style="grid-template-columns:1fr 1fr">
-              <div><dt>29.7 lb</dt><dd>Final design weight</dd></div>
-              <div><dt>$202.72</dt><dd>Parts cost, about half the budget</dd></div>
-              <div><dt>20.3</dt><dd>Design factor, rear axle, normal use</dd></div>
-              <div><dt>1.21</dt><dd>Design factor, worst case drop</dd></div>
-            </dl>
-          </div>
+      <section class="evidence-first">
+        <div class="two-col visual-results">
+          <figure class="fig">
+            <img src="/images/engineering/kite-catia-render.webp" alt="CATIA rendering of the kite buggy" width="825" height="385" loading="eager" decoding="async">
+            <figcaption><b>Team CAD model.</b> Final frame geometry based on the dimensions from the analysis.</figcaption>
+          </figure>
+          <dl class="result-grid">
+            <div><dt>29.7 lb</dt><dd>Modeled design weight</dd></div>
+            <div><dt>$202.72</dt><dd>Parts cost</dd></div>
+            <div><dt>1.21</dt><dd>Drop case design factor</dd></div>
+            <div><dt>20.3</dt><dd>Normal load design factor</dd></div>
+          </dl>
         </div>
       </section>
+
+      <section class="reading-width">
+        <p>The requirements called for a buggy that fit in the trunk of a small car and was designed for speeds up to 40 mph. The controlling load case used a 30 pound cart, a 180 pound rider, a 0.25 second impact, and six inches of seat travel. The impulse model estimated a 3,694 pound load on the frame.</p>
+        <p>We compared aluminum, steel, and titanium for section size, weight, and cost. Aluminum 6061 T451 met the limits with a two inch outside diameter and a 0.25 inch wall. The rear axle was 28 inches wide and the cart was 36 inches long.</p>
+        <p>Under the modeled drop load, the rear axle carried about 1,850 pounds of shear and 9,330 inch pounds of bending moment. Calculated deflection was 0.061 inches and calculated stress was 17,378 psi against a 21,000 psi yield strength. That produced a design factor of 1.21. Under normal riding loads, the rear axle design factor was 20.3.</p>
+        <p>The tipping model included kite pull angle, pull height, rider movement, and an assumed dry asphalt friction coefficient of 0.7. Under that assumption, the model predicted sliding before tipping.</p>
+      </section>
+
       <section>
-        <h2>The worst case</h2>
-        <p>The governing load came from a scenario where an updraft lifts the rider ten feet and the line breaks. With a 30 lb cart, a 180 lb rider, a 0.25 second impact, and 6 inches of spring travel in the seat, the impulse analysis gave about 94 lb from the cart and 3,600 lb from the rider, 3,694 lb on the frame. Every tube diameter and wall thickness in the design traces back to that number.</p>
+        <h2>Load case and rear axle results</h2>
+        <div class="fig-grid">
+          <figure class="fig pad"><img src="/images/engineering/kite-impact.png" alt="Impact force diagram for the modeled drop case" loading="lazy" decoding="async"><figcaption>Modeled drop case.</figcaption></figure>
+          <figure class="fig pad"><img src="/images/engineering/kite-chart-shear.png" alt="Rear axle shear force chart" loading="lazy" decoding="async"><figcaption>Rear axle shear.</figcaption></figure>
+          <figure class="fig pad"><img src="/images/engineering/kite-chart-moment.png" alt="Rear axle bending moment chart" loading="lazy" decoding="async"><figcaption>Rear axle bending moment.</figcaption></figure>
+          <figure class="fig pad"><img src="/images/engineering/kite-chart-deflection.png" alt="Rear axle deflection chart" loading="lazy" decoding="async"><figcaption>Rear axle deflection.</figcaption></figure>
+        </div>
+      </section>
+
+      <section>
+        <h2>Design drawings</h2>
         <div class="fig-grid two">
-          <figure class="fig pad"><img src="/images/engineering/kite-impact.png" alt="Impact force diagram for the drop case" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> Impact model for the drop case, cart and rider treated as an impulse over a defined stopping distance.</figcaption></figure>
-          <figure class="fig pad"><img src="/images/engineering/kite-cantilever.png" alt="Cantilever model of the front tube with length and load" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> The long tube from the front wheel to the rear axle treated as a cantilever, 72 inches and 3,800 lb, for the maximum deflection check.</figcaption></figure>
+          <figure class="fig"><img src="/images/engineering/kite-catia-assembly.webp" alt="CATIA assembly view of the kite buggy" width="852" height="484" loading="lazy" decoding="async"><figcaption>CATIA assembly by a teammate.</figcaption></figure>
+          <figure class="fig pad"><img src="/images/engineering/kite-drawing-views.png" alt="Orthographic and isometric views of the buggy" loading="lazy" decoding="async"><figcaption>Orthographic and isometric views.</figcaption></figure>
         </div>
       </section>
+
       <section>
-        <h2>Tipping before bending</h2>
-        <p>Before the stress work we asked whether the cart would tip. The free body diagrams below carry the kite pull at an angle, the rider's ability to shift weight, and the pull height. The moment balance alone says stability improves with a wider axle, a lower pull height, and a rear set center of mass, but it also blows up as the upward pull approaches the total weight. Adding friction closed the gap. With a tire on dry asphalt at a friction coefficient of 0.7, the cart slips before it tips, and tipping only shows up when the tire digs in and the effective coefficient spikes. The design rule that came out of it was simple. Make the axle as long as the mass and cost limits allow.</p>
-        <div class="fig-grid">
-          <figure class="fig pad"><img src="/images/engineering/kite-cart-top.png" alt="Top view diagram of the cart with dimensions" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> Top view with the axle length, cart length, and center of mass location used in the tipping analysis.</figcaption></figure>
-          <figure class="fig pad"><img src="/images/engineering/kite-fbd-1.png" alt="Free body diagram of the kite force on the cart" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> Free body diagram, kite force at an angle, rider shift, pull height, and the drop line.</figcaption></figure>
-          <figure class="fig pad"><img src="/images/engineering/kite-fbd-2.png" alt="Free body diagram with friction force added" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> The same diagram with friction added, which is what predicts slipping instead of tipping.</figcaption></figure>
+        <h2>Keep reading</h2>
+        <div class="detail-nav">
+          <a class="button button-quiet" href="/engineering/vibration-rig/">Vibration sensing</a>
+          <a class="button button-quiet" href="/engineering/heat-exchanger/">Heat exchanger design</a>
+          <a class="button button-primary" href="/#contact">Get in touch</a>
         </div>
       </section>
-      <section>
-        <h2>Sizing the frame</h2>
-        <p>Aluminum, steel, and titanium were run through the same loop, assume an axle length, compute the moment, back out a tube diameter, then check mass and cost per foot against the limits. Aluminum 6061 T451 met both, at 2 inch outside diameter with a 0.25 inch wall. The rear axle finished at 28 inches, the cart at 36 inches. Under the worst case load the rear axle sees about 1,850 lb of shear, 9,330 in lb of bending moment, 0.061 inches of deflection, and 17,378 psi against a 21,000 psi yield, a design factor of 1.21. Under normal riding loads the same axle runs at a factor of 20.3, and the side rails at 21.7. The team accepted the thin margin on the drop case because it was taken to an extreme and the sprung seat exists to protect the rider in exactly that event.</p>
-        <div class="fig-grid">
-          <figure class="fig pad"><img src="/images/engineering/kite-chart-shear.png" alt="Shear force chart for the rear axle worst case" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> Shear along the rear axle, worst case.</figcaption></figure>
-          <figure class="fig pad"><img src="/images/engineering/kite-chart-moment.png" alt="Bending moment chart for the rear axle worst case" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> Bending moment along the rear axle, worst case.</figcaption></figure>
-          <figure class="fig pad"><img src="/images/engineering/kite-chart-deflection.png" alt="Deflection chart for the rear axle worst case" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> Deflection along the rear axle, worst case, about 0.061 inches at the center.</figcaption></figure>
-        </div>
-        <div class="fig-grid">
-          <figure class="fig pad"><img src="/images/engineering/kite-chart-side-shear.png" alt="Shear chart for the side frame" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> Shear along the side frame.</figcaption></figure>
-          <figure class="fig pad"><img src="/images/engineering/kite-chart-side-moment.png" alt="Bending moment chart for the side frame" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> Bending moment along the side frame.</figcaption></figure>
-          <figure class="fig pad"><img src="/images/engineering/kite-chart-side-deflection.png" alt="Deflection chart for the side frame" loading="lazy" decoding="async"><figcaption><b>Original artifact.</b> Deflection along the side frame, about 0.079 inches at the worst case.</figcaption></figure>
-        </div>
-      </section>
-      <section>
-        <h2>The design</h2>
-        <div class="fig-grid two">
-          <figure class="fig"><img src="/images/engineering/kite-catia-render.webp" alt="CATIA rendering of the kite buggy" width="825" height="385" loading="lazy" decoding="async"><figcaption><b>Team artifact.</b> CATIA rendering of the final frame, modeled by a teammate from the dimensions the analysis produced.</figcaption></figure>
-          <figure class="fig"><img src="/images/engineering/kite-catia-assembly.webp" alt="CATIA assembly view of the kite buggy" width="852" height="484" loading="lazy" decoding="async"><figcaption><b>Team artifact.</b> CATIA assembly of the buggy showing the front fork, the seat frame, and the rear axle.</figcaption></figure>
-        </div>
-        <figure class="fig pad"><img src="/images/engineering/kite-drawing-views.png" alt="Orthographic and isometric views of the buggy assembly" loading="lazy" decoding="async"><figcaption><b>Team artifact.</b> Top, front, right, and isometric views from the buggy assembly drawing, scale 1 to 20.</figcaption></figure>
-        <p class="limit">The report, the calculations, and the drawings were produced by the five-person team for ME 439. Teammates' names and photos are left off this page.</p>
-      </section>
-      <section><h2>Keep reading</h2><div class="detail-nav"><a class="button button-quiet" href="/engineering/vibration-rig/">Vibration sensing rig</a><a class="button button-quiet" href="/engineering/heat-exchanger/">Heat exchanger design study</a><a class="button button-primary" href="/#contact">Get in touch</a></div></section>
     </article>
   </main>
 
