@@ -4,3 +4,8 @@ __pycache__/
 node_modules/
 *.tgz
 *.tar.gz
+
+# Private review and working material stays outside the public release
+/review/
+/release-audit/
+/cartoon-concept/
